@@ -1,5 +1,4 @@
-> # pastebinapi
-
+> # PASTEBIN API
 ```
 # Module made by @venaxyt on Github
 import pastebinapi
@@ -26,5 +25,5 @@ pastebinapi.paste(username, password, api_key, privacity, title, content)
 >>> Output : [>] Pastebin text /raw : https://pastebin.com/raw/pasteid
 ```
 
-> **Download** : ``pip install pastebinapi``<br>
+> ### **Download** : ``pip install pastebinapi``<br>
 > **PyPi [0.0.3] : https://pypi.org/project/pastebinapi**
