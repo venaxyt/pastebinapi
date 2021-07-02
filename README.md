@@ -26,4 +26,4 @@ pastebinapi.paste(username, password, api_key, privacity, title, content)
 ```
 
 > ### **Download** : ``pip install pastebinapi``<br>
-> **PyPi [0.0.3] : https://pypi.org/project/pastebinapi**
+> ### **PyPi [0.0.3] : https://pypi.org/project/pastebinapi**
