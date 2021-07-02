@@ -12,9 +12,9 @@ def check(username, password, api_key):
             }
         login = requests.post("https://pastebin.com/api/api_login.php", data=login_data)
         if login.status_code == 200:
-            return f" [{username}] Valid account"
+            print(f" [{username}] Valid account")
         else:
-            return f" [{username}] Invalid account"
+            print(f" [{username}] Invalid account")
 
 def token(username, password, api_key):
     if not username or not password or not api_key:
@@ -27,14 +27,14 @@ def token(username, password, api_key):
             }
         login = requests.post("https://pastebin.com/api/api_login.php", data=login_data)
         if login.status_code == 200:
-            return f" [{username}] Token : {login.text}"
+            print(f" [{username}] Token : {login.text}")
         else:
-            return f" [{username}] Invalid account"
+            print(f" [{username}] Invalid account")
 
 # Privacity : 0 (public), 1 (unlisted), 2 (private)
 def paste(username, password, api_key, privacity, title, content):
     if not username or not password or not api_key:
-        raise ValueError("username, password and api key has to be specified.")
+        raise ValueError("username, password, api key, privacity code, title and content has to be specified.")
     else:
         login_data = {
             "api_dev_key": api_key,
@@ -43,7 +43,7 @@ def paste(username, password, api_key, privacity, title, content):
             }
         login = requests.post("https://pastebin.com/api/api_login.php", data=login_data)
         if not login.status_code == 200:
-            return f" [{username}] Invalid account"
+            print(f" [{username}] Invalid account")
         else:
             data = {
                 "api_option": "paste",
@@ -61,4 +61,4 @@ def paste(username, password, api_key, privacity, title, content):
                 print(f" [>] Pastebin text page : {paste.text}")
                 print(f' [>] Pastebin text /raw : {(paste.text).replace("https://pastebin.com/", "https://pastebin.com/raw/")}')
             else:
-                return f" [>] An error occurred : {paste.text}"
+                print(f" [>] An error occurred : {paste.text}")
