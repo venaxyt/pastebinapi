@@ -25,3 +25,6 @@ pastebinapi.paste(username, password, api_key, privacity, title, content)
 >>> Output : [>] Pastebin text page : https://pastebin.com/pasteid
 >>> Output : [>] Pastebin text /raw : https://pastebin.com/raw/pasteid
 ```
+
+> **Download**
+``pip install pastebinapi``
