@@ -1,4 +1,5 @@
 # Module made by @venaxyt on Github
+#revised and edited by ksIsCute
 import requests
 
 def check(username, password, api_key):
@@ -53,7 +54,7 @@ def paste(username, password, api_key, privacity, title, content):
                 "api_paste_expire_date": "N",
                 "api_user_key": None,
                 "api_paste_format": "php",
-                "api_paste_private": privacity,
+                "api_paste_private": privacy,
                 }
             paste = requests.post("https://pastebin.com/api/api_post.php", data=data)
             if "https://pastebin.com" in paste.text:
