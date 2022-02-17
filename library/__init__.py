@@ -61,5 +61,7 @@ def paste(username, password, api_key, privacity, title, content):
                 print(" [>] Successfully uploaded :")
                 print(f" [>] Pastebin text page : {paste.text}")
                 print(f' [>] Pastebin text /raw : {(paste.text).replace("https://pastebin.com/", "https://pastebin.com/raw/")}')
+                url = paste.text
+                rawurl = (paste.text).replace("https://pastebin.com/", "https://pastebin.com/raw/"
             else:
                 print(f" [>] An error occurred : {paste.text}")
