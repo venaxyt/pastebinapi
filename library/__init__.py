@@ -32,10 +32,10 @@ def token(username, password, api_key):
         else:
             print(f" [{username}] Invalid account")
 
-# Privacity : 0 (public), 1 (unlisted), 2 (private)
-def paste(username, password, api_key, privacity, title, content):
+# Privacy : 0 (public), 1 (unlisted), 2 (private)
+def paste(username, password, api_key, privacy, title, content):
     if not username or not password or not api_key:
-        raise ValueError("username, password, api key, privacity code, title and content has to be specified.")
+        raise ValueError("username, password, api key, privacy code, title and content has to be specified.")
     else:
         login_data = {
             "api_dev_key": api_key,
@@ -55,6 +55,7 @@ def paste(username, password, api_key, privacity, title, content):
                 "api_user_key": None,
                 "api_paste_format": "php",
                 "api_paste_private": privacy,
+                "api_pastebin_link": paste.text,
                 }
             paste = requests.post("https://pastebin.com/api/api_post.php", data=data)
             if "https://pastebin.com" in paste.text:
