@@ -1,4 +1,5 @@
 # Module made by @venaxyt on Github
+#revised and edited by ksIsCute
 import requests
 
 def check(username, password, api_key):
@@ -53,13 +54,16 @@ def paste(username, password, api_key, privacy, title, content):
                 "api_paste_expire_date": "N",
                 "api_user_key": None,
                 "api_paste_format": "php",
-                "api_paste_private": privacy,
-                "api_pastebin_link": paste.text,
+                "api_paste_private": privacy
                 }
             paste = requests.post("https://pastebin.com/api/api_post.php", data=data)
             if "https://pastebin.com" in paste.text:
-                print(" [>] Successfully uploaded :")
-                print(f" [>] Pastebin text page : {paste.text}")
-                print(f' [>] Pastebin text /raw : {(paste.text).replace("https://pastebin.com/", "https://pastebin.com/raw/")}')
+                def urls(setting="No Setting specified."):
+                    if not url or raw:
+                        raise ValueError("Please enter setting '1' for url and '0' for the raw url!")
+                    if url == "1"
+                        url = paste.text
+                    elif raw == "0"
+                        raw = (paste.text).replace("https://pastebin.com/", "https://pastebin.com/raw/"
             else:
                 print(f" [>] An error occurred : {paste.text}")
